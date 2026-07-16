@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="mango">
 
 <head>
   <!-- Basic -->
@@ -28,6 +28,8 @@
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
+  <!-- theme engine (color variables + switcher widget) -->
+  <link href="css/theme.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
@@ -258,7 +260,7 @@
 
   <!-- end department section -->
 
-  <!-- footer section -->
+   <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
       <div class="row">
@@ -319,13 +321,13 @@
               Links
             </h4>
             <div class="footer_links">
-              <a class="" href="index.html">
+              <a class="active" href="index.html">
                 Home
               </a>
               <a class="" href="about.html">
                 About
               </a>
-              <a class="active" href="services.html">
+              <a class="" href="services.html">
                 Services
               </a>
               <a class="" href="doctors.html">
@@ -342,17 +344,22 @@
         </div>
         <div class="col-md-6 col-lg-3 footer_col ">
           <h4>
-            Operating-Hours
+            Doctor Hours
           </h4>
-          <ul class="footer-hours list-unstyled">
+          <ul class="footer-hours list-unstyled mono">
             <li>
-              <span class="day">Monday to Saturday:</span>
-             
-          </li>
-          <li>
-            <i class="fa fa-clock-o" aria-hidden="true"></i><span class="time">6:00 PM - 10:30 PM</span>
-          </li>
-        </ul>
+              <span class="time">12 PM &ndash; 3 PM</span>
+              <span class="day">Dr. Danial</span>
+            </li>
+            <li>
+              <span class="time">3 PM &ndash; 6 PM</span>
+              <span class="day">Associate Doctor</span>
+            </li>
+            <li>
+              <span class="time">6 PM &ndash; 10 PM</span>
+              <span class="day">Dr. Danial &amp; Dr. Sumair</span>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="footer-info">
@@ -362,7 +369,8 @@
             &copy; <span id="displayYear"></span> Distributed By
             <a href="https://themewagon.com/">ThemeWagon</a>
         </p>
-      </div>
+       
+      </div>  
     </div>
   </footer>
   <!-- footer section -->
@@ -379,6 +387,8 @@
   </script>
   <!-- custom js -->
   <script type="text/javascript" src="js/custom.js"></script>
+  <!-- theme switcher (color palette picker) -->
+  <script type="text/javascript" src="js/theme-switcher.js"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>

@@ -1,0 +1,241 @@
+/* =========================================================
+   THEME ENGINE
+   All colors on the site are driven by these CSS variables.
+   Change --color-primary (and friends) to re-theme everything.
+   The theme switcher widget below writes to these at runtime.
+========================================================= */
+
+:root {
+  /* Core brand color and derived shades (default = Super Dentists mango-orange identity) */
+  --color-primary: #fbaf1b;
+  --color-primary-dark: #c98a0f;
+  --color-primary-light: #fdcb6b;
+  --color-primary-tint: #fff6e7;   /* very light background tint */
+
+  /* Dark surface color (header, footer, hero) — near-black, matches the logo */
+  --color-dark: #0d0d0d;
+  --color-dark-alt: #1a1a1a;
+
+  /* Neutrals */
+  --color-text: #4a4a4a;
+  --color-text-light: #7a7a7a;
+  --color-heading: #0d0d0d;
+  --color-white: #ffffff;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f7f7f7;
+  --color-border: #ececec;
+
+  /* Accent — same mango orange, used for CTAs/highlights */
+  --color-accent: #fbaf1b;
+  --color-accent-dark: #c98a0f;
+
+  /* Typography */
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* ---------------------------------------------------------
+   PRESET PALETTES
+   Applied via data-theme="..." on <html>
+--------------------------------------------------------- */
+
+html[data-theme="mango"] {
+  --color-primary: #fbaf1b;
+  --color-primary-dark: #c98a0f;
+  --color-primary-light: #fdcb6b;
+  --color-primary-tint: #fff6e7;
+  --color-dark: #0d0d0d;
+  --color-dark-alt: #1a1a1a;
+  --color-accent: #fbaf1b;
+  --color-accent-dark: #c98a0f;
+}
+
+html[data-theme="teal"] {
+  --color-primary: #1fab89;
+  --color-primary-dark: #178066;
+  --color-primary-light: #62d2a2;
+  --color-primary-tint: #e9f8f3;
+  --color-dark: #0b5e4f;
+  --color-dark-alt: #0f7a63;
+  --color-accent: #e98a4a;
+  --color-accent-dark: #c96f36;
+}
+
+html[data-theme="navy"] {
+  --color-primary: #2c4a75;
+  --color-primary-dark: #1e3554;
+  --color-primary-light: #5b7ea8;
+  --color-primary-tint: #eaf1f8;
+  --color-dark: #17233a;
+  --color-dark-alt: #1e3554;
+  --color-accent: #c96a3e;
+  --color-accent-dark: #a4552f;
+}
+
+html[data-theme="mint"] {
+  --color-primary: #3aa98f;
+  --color-primary-dark: #2a7d69;
+  --color-primary-light: #8fd6c2;
+  --color-primary-tint: #f0faf7;
+  --color-dark: #1c4a3e;
+  --color-dark-alt: #2a7d69;
+  --color-accent: #2a7d69;
+  --color-accent-dark: #205e50;
+}
+
+html[data-theme="coral"] {
+  --color-primary: #c9564f;
+  --color-primary-dark: #a03e38;
+  --color-primary-light: #e08d87;
+  --color-primary-tint: #fbeeed;
+  --color-dark: #3a1512;
+  --color-dark-alt: #a03e38;
+  --color-accent: #a03e38;
+  --color-accent-dark: #832f2a;
+}
+
+/* =========================================================
+   THEME SWITCHER WIDGET
+========================================================= */
+
+#theme-switcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: 'Roboto', sans-serif;
+}
+
+#theme-switcher .ts-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: conic-gradient(
+    from 180deg,
+    var(--color-primary),
+    var(--color-primary-light),
+    var(--color-accent),
+    var(--color-primary)
+  );
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+#theme-switcher .ts-toggle:hover {
+  transform: scale(1.08);
+}
+
+#theme-switcher .ts-toggle svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
+}
+
+#theme-switcher .ts-panel {
+  position: absolute;
+  bottom: 64px;
+  right: 0;
+  width: 240px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  padding: 16px;
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+#theme-switcher.open .ts-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+#theme-switcher .ts-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+#theme-switcher .ts-swatches {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+#theme-switcher .ts-swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  transition: border-color 0.15s ease;
+}
+
+#theme-switcher .ts-swatch.active {
+  border-color: #222;
+}
+
+#theme-switcher .ts-swatch[data-swatch="mango"] { background: #fbaf1b; }
+#theme-switcher .ts-swatch[data-swatch="teal"] { background: #1fab89; }
+#theme-switcher .ts-swatch[data-swatch="navy"] { background: #2c4a75; }
+#theme-switcher .ts-swatch[data-swatch="mint"] { background: #3aa98f; }
+#theme-switcher .ts-swatch[data-swatch="coral"] { background: #c9564f; }
+
+#theme-switcher .ts-custom-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+#theme-switcher .ts-custom-row label {
+  font-size: 12.5px;
+  color: #555;
+  flex: 1;
+}
+
+#theme-switcher input[type="color"] {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+}
+
+#theme-switcher input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 50%;
+}
+
+#theme-switcher input[type="color"]::-webkit-color-swatch {
+  border: 2px solid #ddd;
+  border-radius: 50%;
+}
+
+@media (max-width: 576px) {
+  #theme-switcher {
+    bottom: 16px;
+    right: 16px;
+  }
+  #theme-switcher .ts-panel {
+    width: 210px;
+  }
+}

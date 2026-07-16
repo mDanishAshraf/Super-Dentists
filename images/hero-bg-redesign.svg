@@ -1,0 +1,59 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b5e4f" />
+      <stop offset="55%" stop-color="#14967f" />
+      <stop offset="100%" stop-color="#1c7e6c" />
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#5fcbae" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#5fcbae" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="15%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#e98a4a" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#e98a4a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#baseGrad)" />
+  <rect width="1600" height="900" fill="url(#glow)" />
+  <rect width="1600" height="900" fill="url(#glow2)" />
+
+  <!-- soft dot grid texture, right side -->
+  <g fill="#ffffff" opacity="0.10">
+    <g id="dotrow">
+      <circle cx="0" cy="0" r="3"/><circle cx="34" cy="0" r="3"/><circle cx="68" cy="0" r="3"/>
+      <circle cx="102" cy="0" r="3"/><circle cx="136" cy="0" r="3"/><circle cx="170" cy="0" r="3"/>
+      <circle cx="204" cy="0" r="3"/><circle cx="238" cy="0" r="3"/><circle cx="272" cy="0" r="3"/>
+      <circle cx="306" cy="0" r="3"/><circle cx="340" cy="0" r="3"/><circle cx="374" cy="0" r="3"/>
+    </g>
+    <use href="#dotrow" x="950" y="80"/>
+    <use href="#dotrow" x="950" y="114"/>
+    <use href="#dotrow" x="950" y="148"/>
+    <use href="#dotrow" x="950" y="182"/>
+    <use href="#dotrow" x="950" y="216"/>
+    <use href="#dotrow" x="950" y="250"/>
+    <use href="#dotrow" x="950" y="284"/>
+    <use href="#dotrow" x="950" y="318"/>
+  </g>
+
+  <!-- large soft tooth silhouette, right side, subtle -->
+  <g transform="translate(1080,180)" opacity="0.16">
+    <path d="M180 0
+      C 260 0 320 55 320 140
+      C 320 230 300 320 275 400
+      C 258 456 240 520 205 520
+      C 172 520 168 430 150 430
+      C 132 430 128 520 95 520
+      C 60 520 42 456 25 400
+      C 0 320 -20 230 -20 140
+      C -20 55 40 0 120 0
+      C 140 0 160 8 150 8
+      C 140 8 160 0 180 0 Z"
+      fill="#ffffff"/>
+  </g>
+
+  <!-- gentle wave divider at the bottom -->
+  <path d="M0 860 C 320 800 500 920 800 870 C 1100 820 1300 900 1600 840 L1600 900 L0 900 Z"
+    fill="#ffffff" opacity="0.06"/>
+</svg>

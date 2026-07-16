@@ -1,0 +1,95 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000" />
+      <stop offset="60%" stop-color="#0d0d0d" />
+      <stop offset="100%" stop-color="#181818" />
+    </linearGradient>
+
+    <radialGradient id="glowMain" cx="80%" cy="24%" r="55%">
+      <stop offset="0%" stop-color="#fbaf1b" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#fbaf1b" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowSoft" cx="18%" cy="90%" r="50%">
+      <stop offset="0%" stop-color="#fbaf1b" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#fbaf1b" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="toothGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdcb6b" />
+      <stop offset="55%" stop-color="#fbaf1b" />
+      <stop offset="100%" stop-color="#c98a0f" />
+    </linearGradient>
+
+    <linearGradient id="toothShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="toothGlow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fbaf1b" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#fbaf1b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#baseGrad)" />
+  <rect width="1600" height="900" fill="url(#glowMain)" />
+  <rect width="1600" height="900" fill="url(#glowSoft)" />
+
+  <!-- fine dot-grid texture, upper right quadrant -->
+  <g fill="#fbaf1b" opacity="0.12">
+    <g id="dotrow">
+      <circle cx="0" cy="0" r="2.6"/><circle cx="30" cy="0" r="2.6"/><circle cx="60" cy="0" r="2.6"/>
+      <circle cx="90" cy="0" r="2.6"/><circle cx="120" cy="0" r="2.6"/><circle cx="150" cy="0" r="2.6"/>
+      <circle cx="180" cy="0" r="2.6"/><circle cx="210" cy="0" r="2.6"/><circle cx="240" cy="0" r="2.6"/>
+      <circle cx="270" cy="0" r="2.6"/><circle cx="300" cy="0" r="2.6"/><circle cx="330" cy="0" r="2.6"/>
+    </g>
+    <use href="#dotrow" x="1040" y="70"/>
+    <use href="#dotrow" x="1040" y="100"/>
+    <use href="#dotrow" x="1040" y="130"/>
+    <use href="#dotrow" x="1040" y="160"/>
+    <use href="#dotrow" x="1040" y="190"/>
+    <use href="#dotrow" x="1040" y="220"/>
+    <use href="#dotrow" x="1040" y="250"/>
+  </g>
+
+  <!-- soft ambient glow behind the tooth -->
+  <circle cx="1220" cy="480" r="340" fill="url(#toothGlow)" />
+
+  <!-- refined tooth mark, echoing the logo, bottom right -->
+  <g transform="translate(1050,280)">
+    <path d="M170 0
+      C 250 0 305 58 303 145
+      C 301 235 282 325 258 405
+      C 242 460 226 526 192 526
+      C 160 526 158 434 141 434
+      C 124 434 120 526 88 526
+      C 55 526 38 460 22 405
+      C -2 325 -20 235 -18 145
+      C -16 58 40 0 118 0
+      C 132 0 150 6 145 6
+      C 138 6 156 0 170 0 Z"
+      fill="url(#toothGrad)" opacity="0.94"/>
+    <path d="M170 0
+      C 250 0 305 58 303 145
+      C 301 210 292 275 278 335
+      C 250 220 200 120 118 60
+      C 100 46 78 24 90 8
+      C 100 2 112 0 118 0
+      C 132 0 150 6 145 6
+      C 138 6 156 0 170 0 Z"
+      fill="url(#toothShine)" opacity="0.5"/>
+  </g>
+
+  <!-- four small accent squares, echoing the brand mark, top-left, subtle -->
+  <g opacity="0.5" transform="translate(120,90)">
+    <rect x="0" y="0" width="34" height="34" fill="#fbaf1b" opacity="0.7"/>
+    <rect x="40" y="0" width="34" height="34" fill="#fdcb6b" opacity="0.5"/>
+    <rect x="0" y="40" width="34" height="34" fill="#c98a0f" opacity="0.5"/>
+    <rect x="40" y="40" width="34" height="34" fill="#fbaf1b" opacity="0.35"/>
+  </g>
+
+  <!-- gentle wave divider at the very bottom -->
+  <path d="M0 858 C 320 800 500 918 800 866 C 1100 814 1300 900 1600 838 L1600 900 L0 900 Z"
+    fill="#fbaf1b" opacity="0.05"/>
+</svg>

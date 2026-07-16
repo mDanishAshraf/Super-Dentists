@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="mango">
 
 <head>
   <!-- Basic -->
@@ -19,13 +19,18 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- theme engine (color variables + switcher widget) -->
+  <link href="css/theme.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
@@ -39,7 +44,7 @@
   <div class="hero_area">
 
     <div class="hero_bg_box">
-      <img src="images/hero-bg.png" alt="">
+      <img src="images/hero-bg-mango.svg" alt="">
     </div>
 
     <!-- header section strats -->
@@ -87,78 +92,53 @@
       </div>
     </header>
     <!-- end header section -->
-    <!-- slider section -->
-    <section class="slider_section ">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="detail-box">
-                    <h1>
-                      We Provide Best Healthcare
-                    </h1>
-                    <p>Welcome to Super Dentists, your trusted family dental clinic. We offer comprehensive dental care services for all ages, ensuring a healthy and beautiful smile for everyone.</p>
-                    <div class="btn-box">
-                      <a href="about.html" class="btn1">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="detail-box">
-                    <h1>
-                      We Provide Best Healthcare
-                    </h1>
-                    <p>Welcome to Super Dentists, your trusted family dental clinic. We offer comprehensive dental care services for all ages, ensuring a healthy and beautiful smile for everyone.</p>
-                    <div class="btn-box">
-                      <a href="about.html" class="btn1">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="detail-box">
-                    <h1>
-                      We Provide Best Healthcare
-                    </h1>
-                    <p>Welcome to Super Dentists, your trusted family dental clinic. We offer comprehensive dental care services for all ages, ensuring a healthy and beautiful smile for everyone.</p>
-                    <div class="btn-box">
-                      <a href="about.html" class="btn1">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
+    <!-- hero section -->
+    <section class="slider_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10">
+            <div class="detail-box">
+              <span class="hero_badge mono"> Monady to Saturday  &middot; 12:00 PM &ndash; 10:00 PM</span>
+              <h1>
+                Family dental care, <em>with the right doctor at every hour.</em>
+              </h1>
+              <p>Super Dentists is a Karachi clinic offering complete care for every age &mdash; orthodontics, implants, root canals, and cosmetic dentistry &mdash; with owner-doctors and associates covering shifts through the day so you're never without care.</p>
+              <div class="btn-box">
+                <a href="appointment.html" class="btn1">
+                  Book an Appointment
+                </a>
+                <a href="about.html" class="btn2">
+                  Meet the Doctors
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <ol class="carousel-indicators">
-          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-          <li data-target="#customCarousel1" data-slide-to="1"></li>
-          <li data-target="#customCarousel1" data-slide-to="2"></li>
-        </ol>
       </div>
-
     </section>
-    <!-- end slider section -->
+    <!-- end hero section -->
   </div>
+
+  <!-- schedule section -->
+  <section class="schedule_section">
+    <div class="container">
+      <div class="schedule_strip">
+        <div class="schedule_item">
+          <span class="schedule_time mono">12 PM &ndash; 3 PM</span>
+          <span class="schedule_label">Dr. Danial</span>
+        </div>
+        <div class="schedule_item">
+          <span class="schedule_time mono">3 PM &ndash; 6 PM</span>
+          <span class="schedule_label">Associate Doctor</span>
+        </div>
+        <div class="schedule_item">
+          <span class="schedule_time mono">6 PM &ndash; 10 PM</span>
+          <span class="schedule_label">Dr. Danial &amp; Dr. Sumair</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end schedule section -->
 
   <!-- department section -->
 
@@ -632,17 +612,22 @@
         </div>
         <div class="col-md-6 col-lg-3 footer_col ">
           <h4>
-            Operating-Hours
+            Doctor Hours
           </h4>
-          <ul class="footer-hours list-unstyled">
+          <ul class="footer-hours list-unstyled mono">
             <li>
-              <span class="day">Monday to Saturday:</span>
-             
-          </li>
-          <li>
-            <i class="fa fa-clock-o" aria-hidden="true"></i><span class="time">6:00 PM - 10:30 PM</span>
-          </li>
-        </ul>
+              <span class="time">12 PM &ndash; 3 PM</span>
+              <span class="day">Dr. Danial</span>
+            </li>
+            <li>
+              <span class="time">3 PM &ndash; 6 PM</span>
+              <span class="day">Associate Doctor</span>
+            </li>
+            <li>
+              <span class="time">6 PM &ndash; 10 PM</span>
+              <span class="day">Dr. Danial &amp; Dr. Sumair</span>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="footer-info">
@@ -670,6 +655,8 @@
   </script>
   <!-- custom js -->
   <script type="text/javascript" src="js/custom.js"></script>
+  <!-- theme switcher (color palette picker) -->
+  <script type="text/javascript" src="js/theme-switcher.js"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
