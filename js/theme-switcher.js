@@ -135,6 +135,7 @@
       '<label for="ts-custom-input">Custom color</label>' +
       '<input type="color" id="ts-custom-input" value="' + savedCustom + '">' +
       "</div>" +
+      '<button class="ts-reset" type="button">Reset to default</button>' +
       "</div>";
 
     document.body.appendChild(wrap);
@@ -162,6 +163,15 @@
       applyCustomColor(colorInput.value);
       saveChoice(colorInput.value, true);
       markActiveSwatch(wrap, null);
+    });
+
+    var resetBtn = wrap.querySelector(".ts-reset");
+    resetBtn.addEventListener("click", function () {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(STORAGE_CUSTOM_KEY);
+      applyPreset("mango");
+      colorInput.value = "#fbaf1b";
+      markActiveSwatch(wrap, "mango");
     });
 
     // Mark whichever theme is currently active

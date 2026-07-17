@@ -41,6 +41,28 @@
 
 <body>
 
+  <!-- page loader -->
+  <div id="page-loader">
+    <img class="loader-tooth" src="images/sd-logo-mark.png" alt="Super Dentists">
+  </div>
+  <!-- end page loader -->
+  <script>
+    (function () {
+      var loader = document.getElementById("page-loader");
+      function hideLoader() {
+        loader.classList.add("loader-hidden");
+        setTimeout(function () {
+          if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+        }, 500);
+      }
+      if (document.readyState === "complete") {
+        hideLoader();
+      } else {
+        window.addEventListener("load", hideLoader);
+      }
+    })();
+  </script>
+
   <div class="hero_area">
 
     <div class="hero_bg_box">
@@ -98,7 +120,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10">
             <div class="detail-box">
-              <span class="hero_badge mono"> Monady to Saturday  &middot; 12:00 PM &ndash; 10:00 PM</span>
+              <span class="hero_badge mono">Open daily &middot; 12:00 PM &ndash; 10:00 PM</span>
               <h1>
                 Family dental care, <em>with the right doctor at every hour.</em>
               </h1>
@@ -616,15 +638,15 @@
           </h4>
           <ul class="footer-hours list-unstyled mono">
             <li>
-              <span class="time">12 PM &ndash; 3 PM</span>
+              <span class="time">12 PM&ndash;3 PM</span>
               <span class="day">Dr. Danial</span>
             </li>
             <li>
-              <span class="time">3 PM &ndash; 6 PM</span>
+              <span class="time">3 PM&ndash;6 PM</span>
               <span class="day">Associate Doctor</span>
             </li>
             <li>
-              <span class="time">6 PM &ndash; 10 PM</span>
+              <span class="time">6 PM&ndash;10 PM</span>
               <span class="day">Dr. Danial &amp; Dr. Sumair</span>
             </li>
           </ul>
