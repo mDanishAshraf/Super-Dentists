@@ -62,6 +62,8 @@
 ========================================================= */
 
 :root {
+  color-scheme: light;
+
   /* Core brand color and derived shades (default = Super Dentists mango-orange identity) */
   --color-primary: #fbaf1b;
   --color-primary-dark: #c98a0f;
