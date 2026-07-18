@@ -617,6 +617,8 @@ a:focus {
 .department_section .box .img-box img {
   max-width: 48px;
   max-height: 48px;
+  -webkit-filter: brightness(0) opacity(0.78);
+          filter: brightness(0) opacity(0.78);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -719,6 +721,10 @@ a:focus {
 
 .doctor_section_DetailedPage .heading_container {
   color: var(--color-primary-dark) !important;
+}
+
+.doctor_section_DetailedPage .heading_container h2 {
+  color: var(--color-heading) !important;
 }
 
 .doctor_section .heading_container {
@@ -1168,7 +1174,7 @@ a:focus {
 }
 
 .footer-hours {
-  margin-top: 15px;
+  margin-top: 26px;
   font-size: 14px;
   color: #fff;
   list-style: none;
